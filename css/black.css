@@ -1,0 +1,40 @@
+body {
+  color: #ffffff;
+  background-color: #000000;
+}
+a {
+  color: #dddddd;
+}
+a:hover,
+a:focus {
+  color: #ffffff;
+}
+.thumbnail {
+  background-color: #000000;
+}
+.breadcrumb {
+  background-color: #222222;
+}
+.thumbnail .caption {
+  color: #ffffff;
+}
+hr {
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #000000;
+}
+.thumbnail {
+  border: 1px solid #666;
+  -webkit-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.055);
+     -moz-box-shadow: 0 1px 3px rgba(255, 255, 255, 0.055);
+          box-shadow: 0 1px 3px rgba(255, 255, 255, 0.055);
+}
+a.thumbnail:hover,
+a.thumbnail:focus {
+  border-color: #ffffff;
+  -webkit-box-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
+     -moz-box-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
+          box-shadow: 0 1px 4px rgba(255, 255, 255, 0.25);
+}
+.navbar-brand {
+  color: #ffffff !important;
+}
