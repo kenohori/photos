@@ -1,7 +1,7 @@
 <?php
-include('header.php');
+include('cabeza.php');
 
-$lang = 'en';
+$lang = 'es';
 
 $localisedtext = array(
 	'en' => array(
@@ -103,7 +103,9 @@ $geonames = array(
 		'Bajio' => 'Bajío',
 		'Republica Checa' => 'República Checa',
 		'Cataluna' => 'Cataluña',
-		'Japon y Corea del Sur' => 'Japón y Corea del Sur'
+		'Japon y Corea del Sur' => 'Japón y Corea del Sur',
+		'Alemania y Paises Bajos' => 'Alemania y Países Bajos',
+		'Andalucia' => 'Andalucía'
 	)
 );
 
@@ -141,7 +143,7 @@ if (!isset($_GET['album'])) {
 		} else if ($photoshere > 0) echo($photoshere.' '.$localisedtext[$lang]['photos']);
 		echo(')</li>'."\n");
 	} else {
-		echo('					<li><a href="photos.php">'.$localisedtext[$lang]['Albums'].'</a></li> <span class="divider">/</span>'."\n");
+		echo('					<li><a href="fotos.php">'.$localisedtext[$lang]['Albums'].'</a></li> <span class="divider">/</span>'."\n");
 	} $pathsofar = '';
 	for ($i = 0; $i < sizeof($folders) and isset($_GET['album']); $i++) {
 		$folder = $folders[$i];
@@ -149,7 +151,7 @@ if (!isset($_GET['album'])) {
 		if (isset($geonames[$lang][$displayfolder])) $displayfolder = $geonames[$lang][$displayfolder];
 		if ($i < sizeof($folders)-1) {
 			$pathsofar .= $folder;
-			echo('					<li><a href="photos.php?album='.$pathsofar.'">'.$displayfolder.'</a></li> <span class="divider">/</span>'."\n");
+			echo('					<li><a href="fotos.php?album='.$pathsofar.'">'.$displayfolder.'</a></li> <span class="divider">/</span>'."\n");
 			$pathsofar .= '/';
 		} else {
 			if (PHP_OS == "Linux") echo('					<li class="active">'.$displayfolder.' (');
@@ -209,9 +211,9 @@ if (!isset($_GET['album'])) {
 			if (isset($geonames[$lang][$displayentry])) {
 				if (PHP_OS == "Linux") $displayentry = utf8_decode($geonames[$lang][utf8_encode($displayentry)]);
 				else $displayentry = $geonames[$lang][$displayentry];
-			} if (PHP_OS == "Linux") echo('				<div style="display:inline-block"><a href="photos.php?album='.utf8_encode(str_replace('%2F', '/', rawurlencode($basedir.$entry))).'" class="thumbnail text-center" style="margin:5px"><img src="./thumbnails/'.utf8_encode(str_replace('%2F', '/', rawurlencode($photosindirectory[$randomphotokey]))).'"><div class="caption"><i class="fa fa-folder-o"></i> '.utf8_encode($displayentry).' ('.$itemsindir.')</div></a></div>'."\n");
-			else echo('				<div style="display:inline-block"><a href="photos.php?album='.$basedir.$entry.'" class="thumbnail text-center" style="margin:5px"><img src="./thumbnails/'.$photosindirectory[$randomphotokey].'"><div class="caption"><i class="fa fa-folder-o"></i> '.$displayentry.' ('.$itemsindir.')</div></a></div>'."\n");
-			//else echo('					<a href="photos.php?album='.$basedir.$entry.'" class="thumbnail"><img src="./thumbnails/'.$photosindirectory[$randomphotokey].'"><div class="caption"><i class="icon-folder-close-alt"></i> '.$displayentry.' ('.$itemsindir.')</div></a>'."\n");
+			} if (PHP_OS == "Linux") echo('				<div style="display:inline-block"><a href="fotos.php?album='.utf8_encode(str_replace('%2F', '/', rawurlencode($basedir.$entry))).'" class="thumbnail text-center" style="margin:5px"><img src="./thumbnails/'.utf8_encode(str_replace('%2F', '/', rawurlencode($photosindirectory[$randomphotokey]))).'"><div class="caption"><i class="fa fa-folder-o"></i> '.utf8_encode($displayentry).' ('.$itemsindir.')</div></a></div>'."\n");
+			else echo('				<div style="display:inline-block"><a href="fotos.php?album='.$basedir.$entry.'" class="thumbnail text-center" style="margin:5px"><img src="./thumbnails/'.$photosindirectory[$randomphotokey].'"><div class="caption"><i class="fa fa-folder-o"></i> '.$displayentry.' ('.$itemsindir.')</div></a></div>'."\n");
+			//else echo('					<a href="fotos.php?album='.$basedir.$entry.'" class="thumbnail"><img src="./thumbnails/'.$photosindirectory[$randomphotokey].'"><div class="caption"><i class="icon-folder-close-alt"></i> '.$displayentry.' ('.$itemsindir.')</div></a>'."\n");
 		} 
 		
 		// For single files
@@ -243,5 +245,5 @@ if (!isset($_GET['album'])) {
 	echo ('<p>WTF!<p>');
 }
 
-include('footer.php');
+include('pie.php');
 ?>

@@ -3,10 +3,10 @@
 $query = parse_url($_SERVER["REQUEST_URI"]);
 
 echo('<!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 	<head>
 	  <meta charset="utf-8">
-	  <title>Photos | Ken Arroyo Ohori</title>
+	  <title>Fotos | Ken Arroyo Ohori</title>
 	  <meta name="description" content="Ken Arroyo Ohori">
 	  <meta name="keywords" content="Gustavo Adolfo Ken Arroyo Ohori">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,20 +31,20 @@ echo('<!DOCTYPE html>
 			</div>
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/">About</a></li>
-					<li class="active"><a href="https://fotos.ken.mx/photos.php">Photos</a></li>
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/blog/">Blog</a></li>
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/papers/">Papers</a></li>
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/thesis/">PhD thesis</a></li>
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/code/">Code</a></li>
-					<li><a href="https://3d.bk.tudelft.nl/ken/en/contact/">Contact</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/">Acerca de</a></li>
+					<li class="active"><a href="https://fotos.ken.mx/fotos.php">Fotos</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/blog/">Blog</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/papers/">Art&iacute;culos</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/thesis/">Tesis doctoral</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/code/">C&oacute;digo</a></li>
+					<li><a href="https://3d.bk.tudelft.nl/ken/es/contact/">Contacto</a></li>
 				</ul>
 				<ul class="nav navbar-nav pull-right">
 					<li class="dropdown pull-right">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">en <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">es <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="photos.php?'.$query['query'].'">en</a></li>
 							<li><a href="fotos.php?'.$query['query'].'">es</a></li>
+							<li><a href="photos.php?'.$query['query'].'">en</a></li>
 						</ul>
 					</li>
 				</ul>
